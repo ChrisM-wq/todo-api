@@ -14,9 +14,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SongModel {
 
     @Id
-    private ObjectId id;
+    private ObjectId _id;
     private String spotifyID;
     private String title;
     private String artist;
+
+    public String getId() {
+        return _id.toString();
+    }
 
 }
