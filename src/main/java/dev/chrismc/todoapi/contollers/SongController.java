@@ -39,4 +39,10 @@ public class SongController {
         }
     }
 
+    @PostMapping("/add")
+    public ResponseEntity postBody(@RequestBody SongModel song) {
+        songService.addSong(song);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 }

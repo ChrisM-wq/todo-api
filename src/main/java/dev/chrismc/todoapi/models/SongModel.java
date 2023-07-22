@@ -1,9 +1,9 @@
 package dev.chrismc.todoapi.models;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,13 +14,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SongModel {
 
     @Id
-    private ObjectId _id;
+    private String _id;
+
+    @NotNull (message = "Song track ID is compulsory")
     private String spotifyID;
+
     private String title;
     private String artist;
 
-    public String getId() {
-        return _id.toString();
-    }
 
 }

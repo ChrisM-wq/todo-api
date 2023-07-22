@@ -21,5 +21,9 @@ public class SongService {
         return songRepository.findById(id);
     }
 
+    public void addSong(SongModel song) {
+        songRepository.save(song);
+    }
+
 
 }
